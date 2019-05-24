@@ -6,11 +6,8 @@ DISCOUNT = --discount_fallback
 SWITCHES = -o 5 ${DISCOUNT}
 DIALECTS = ALE ALG ALX AMM ASW BAG BAS BEI BEN CAI DAM DOH FES JED JER KHA MOS MSA MUS RAB RIY SAL SAN SFX TRI TUN 
 models=model/ALE.binary model/ALG.binary model/ALX.binary model/AMM.binary model/ASW.binary model/BAG.binary model/BAS.binary model/BEI.binary model/BEN.binary model/CAI.binary model/DAM.binary model/DOH.binary model/FES.binary model/JED.binary model/JER.binary model/KHA.binary model/MOS.binary model/MSA.binary model/MUS.binary model/RAB.binary model/RIY.binary model/SAL.binary model/SAN.binary model/SFX.binary model/TRI.binary model/TUN.binary 
-models26c=$(subst del/,del.26c,${models})
-models26w=$(subst del/,del.26w,${models})
-models26l=${models26c} ${models26w}
 
-lm:	models6 models26#${models}
+lm:	${models}
 
 score:	
 	python3 MADAR-SHARED-TASK-third-release-8Mar2019/MADAR-DID-Scorer-v.0.1.py MADAR-SHARED-TASK-third-release-8Mar2019/MADAR-Shared-Task-Subtask-1/MADAR-Corpus-26-dev.gold pyrite
@@ -183,14 +180,4 @@ models.6w/RAB.binary:	outs.6w/MADAR_TRAINING_SAMPLE-RAB.txt
 models.6w/TUN.binary:	outs.6w/MADAR_TRAINING_SAMPLE-TUN.txt
 	lmplz ${SWITCHES} <$^ >models.6w/TUN.arpa
 	build_binary models.6w/TUN.arpa $@
-
-models26:	${models26l}
-
-models.26c/%.binary:	outs.26c/MADAR_TRAINING_SAMPLE-%.txt
-	lmplz ${SWITCHES} <$^ >$*.arpa
-	build_binary $*.arpa $@
-
-models.26w/%.binary:	outs.26w/MADAR_TRAINING_SAMPLE-%.txt
-	lmplz ${SWITCHES} <$^ >$*.arpa
-	build_binary $*.arpa $@
 
