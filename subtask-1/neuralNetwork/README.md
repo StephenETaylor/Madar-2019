@@ -1,3 +1,5 @@
+You can run the code from `main_s1.py` file in `nn` package
+
 To run the code, you need:
 * Installed python libraries specified in requirments.txt
 * Arabic word embeddings in .vec format, for example, fasttext from https://fasttext.cc/docs/en/pretrained-vectors.html
