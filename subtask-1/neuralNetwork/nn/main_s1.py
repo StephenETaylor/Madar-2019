@@ -38,9 +38,6 @@ label2dialect = {}
 
 NUMBER_CPUS = 6
 
-# todo udelat gitignore abych tam nenahral soubory
-# todo kouknout na ten model jak se trenuje
-# dat tam ten final model
 
 def predict_test(lang_feature_names, data_test_cols_s1, output_file_name, data_key,y_test=None,labels=None):
     print('base path',BASE_PATH)
@@ -69,7 +66,7 @@ def predict_test(lang_feature_names, data_test_cols_s1, output_file_name, data_k
 
 
 def main():
-    test = True
+    test = False
 
     config_file = "./model_configs/ngram_base_line.config"
 
