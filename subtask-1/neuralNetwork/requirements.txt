@@ -1,0 +1,17 @@
+matplotlib==2.2.2
+seaborn==0.9.0
+pandas==0.24.1
+Keras==2.2.4
+Keras-Applications==1.0.7
+keras-contrib==2.0.8
+Keras-Preprocessing==1.0.9
+keras-utilities==0.5.0
+scikit-image==0.14.0
+scikit-learn==0.20.0
+scipy==1.1.0
+numpy==1.16.2
+tensorboard==1.14.0
+tensorflow==1.14.0
+tensorflow-estimator==1.14.0
+tensorflow-hub==0.5.0
+
